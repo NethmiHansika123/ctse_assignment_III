@@ -1,4 +1,4 @@
-name: Docker Image Github
+name: Docker Image  Github
 
 on:
   push:
