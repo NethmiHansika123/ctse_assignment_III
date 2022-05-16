@@ -4,11 +4,22 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const config = require('./DB.js');
 
+'use strict';
+
+
+
+// Constants
+const PORT = 8080;
+const HOST = '0.0.0.0';
+
+
 const app = express();
+app.get('/', (req, res) => {
+    res.send('Hello I am IT19091358 T.A.N.Hansika');
+  });
+  
 
-//const mainRoutes = require('./routes/main_routes.js');
-
-mongoose.Promise = global.Promise;
+//mongoose.Promise = global.Promise;
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -20,8 +31,9 @@ mongoose.connect(config.DB, {useNewUrlParser: true, useUnifiedTopology: true}).t
     err => {console.log('cannot connect to database' + err)}
 );
 
-//sanduni
+
 app.use('/employee',require('./Routes/employee-route'));
 app.use('/get',require('./Routes/employee-route'));
 
-app.listen(3001 , () => console.log("Server is started"));
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);

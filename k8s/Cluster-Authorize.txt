@@ -1,0 +1,1 @@
+gcloud container clusters get-credentials ctse-cluster --zone us-central1-c --project able-pottery-350310
