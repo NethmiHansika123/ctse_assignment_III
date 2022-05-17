@@ -8,7 +8,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Login to Docker Hub
@@ -28,4 +27,4 @@ jobs:
         KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
       with:
         args: get namespaces
-        
+
