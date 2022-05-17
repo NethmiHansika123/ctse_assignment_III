@@ -22,7 +22,11 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: it19091358/ctse:latest
-        
+    - uses: actions-hub/kubectl@master
+      env:
+        KUBE_PASSWORD: ${{ secrets.KUBE_PASSWORD }}
+      with:
+        args: get namespaces    
    
       
   
