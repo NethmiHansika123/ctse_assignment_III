@@ -22,11 +22,28 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: it19091358/ctse:latest
-    - uses: actions-hub/kubectl@master
-      env:
-        KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-      # with:
-      #   args: get namespaces
-      with:
-        args: apply -f k8s/
+    # - uses: actions-hub/kubectl@master
+    #   env:
+    #     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+    #   # with:
+    #   #   args: get namespaces
+    #   with:
+    #     args: apply -f k8s/
+  deploy:
+    name: Deploy to Kubernetes
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Create kubeconfig
+      run: |
+        mkdir ${HOME}/.kube
+        echo ${{ secrets.KUBE_CONFIG }} | base --decode > ${HOME}/.kube/config
+        cat ${HOME}/.kube/config
+
+    - name: Use Context
+      run: kubectl config use-context octobay-api
+    - name: Deploy to k8s
+      run: kubectl apply -f k8s/
+
 
