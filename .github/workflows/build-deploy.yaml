@@ -37,7 +37,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Create kubeconfig
       run: |
-      
         echo ${{ secrets.KUBE_CONFIG }} 
 
     - name: Use Context
