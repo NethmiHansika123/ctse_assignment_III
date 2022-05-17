@@ -24,9 +24,12 @@ jobs:
         tags: it19091358/ctse:latest
     - uses: actions-hub/kubectl@master
       env:
-        KUBE_CONFIG: ${{ secrets.KUBE_PASSWORD }}
+        KUBE_HOST: ${{ secrets.KUBE_HOST }}
+        KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
+        KUBE_USERNAME: ${{ secrets.KUBE_USERNAME }}
+        
       with:
-        args: get namespaces    
+        args: get pods  
    
       
   
