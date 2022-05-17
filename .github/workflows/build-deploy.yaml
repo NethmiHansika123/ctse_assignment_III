@@ -22,7 +22,6 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: it19091358/ctse:latest
-
     - name: Deploy Kubernetes    
       uses: actions-hub/kubectl@master
       env:
