@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: "2"
+    deployment.kubernetes.io/revision: "4"
   creationTimestamp: "2022-05-16T00:30:40Z"
-  generation: 3
+  generation: 5
   labels:
     app: it19091358
   managedFields:
@@ -65,7 +65,7 @@ metadata:
                     f:protocol: {}
     manager: GoogleCloudConsole
     operation: Update
-    time: "2022-05-16T03:23:40Z"
+    time: "2022-05-16T10:35:29Z"
   - apiVersion: apps/v1
     fieldsType: FieldsV1
     fieldsV1:
@@ -99,10 +99,10 @@ metadata:
         f:updatedReplicas: {}
     manager: kube-controller-manager
     operation: Update
-    time: "2022-05-16T03:23:49Z"
+    time: "2022-05-16T10:38:13Z"
   name: it19091358
   namespace: default
-  resourceVersion: "332649"
+  resourceVersion: "492415"
   uid: d40c6f98-ba84-4d38-821a-31fac55cb23a
 spec:
   progressDeadlineSeconds: 600
@@ -147,12 +147,12 @@ status:
     status: "True"
     type: Available
   - lastTransitionTime: "2022-05-16T00:30:40Z"
-    lastUpdateTime: "2022-05-16T03:23:50Z"
+    lastUpdateTime: "2022-05-16T10:38:13Z"
     message: ReplicaSet "it19091358-5995cf587f" has successfully progressed.
     reason: NewReplicaSetAvailable
     status: "True"
     type: Progressing
-  observedGeneration: 3
+  observedGeneration: 5
   readyReplicas: 3
   replicas: 3
   updatedReplicas: 3
