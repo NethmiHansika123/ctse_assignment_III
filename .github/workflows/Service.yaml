@@ -82,4 +82,3 @@ status:
   loadBalancer:
     ingress:
     - ip: 35.202.108.121
-

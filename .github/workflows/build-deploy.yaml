@@ -35,7 +35,8 @@ jobs:
       env:
         KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
       with:
-        args: apply -f ./k8s
+        args: get namespaces
+        
 
        
    
