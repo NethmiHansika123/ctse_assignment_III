@@ -22,15 +22,15 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: it19091358/ctse:latest
-    # - uses: actions-hub/kubectl@master
-    #   env:
-    #     KUBE_HOST: ${{ secrets.KUBE_HOST }}
-    #     KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
-    #     KUBE_USERNAME: ${{ secrets.KUBE_USERNAME }}
-    #     KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
+    - uses: actions-hub/kubectl@master
+      env:
+        KUBE_HOST: ${{ secrets.KUBE_HOST }}
+        KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
+        KUBE_USERNAME: ${{ secrets.KUBE_USERNAME }}
+        KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
         
-    #   with:
-    #     args: get pods  
+      with:
+        args: get pods  
     # - uses: actions-hub/kubectl@master
     #   env:
     #     KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
